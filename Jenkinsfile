@@ -1,7 +1,13 @@
 
 
 pipeline {
-    agent any
+    agent {
+    
+                 node('docker') {
+    
+          }
+    
+    }
 
     stages {
         stage('Hello') {
