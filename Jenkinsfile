@@ -14,6 +14,7 @@ pipeline {
                           docker push yogi9949/project1:$BUILD_NUMBER  
                           docker run -itd -p 80:80 --name httpd yogi9949/project1:11
                           docker rmi yogi9949/project1:$BUILD_NUMBER'''
+                    cleanWs()
                   }
             }
         }
