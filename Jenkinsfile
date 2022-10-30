@@ -16,7 +16,7 @@ pipeline {
                        '''
             }
         }
-        stage('docker run') {
+         stage('docker run') {
             steps {
                 withCredentials([usernameColonPassword(credentialsId: 'root', variable: 'docker')]) {
                     sh '''    
@@ -26,11 +26,11 @@ pipeline {
                           docker rmi yogi9949/project1:$BUILD_NUMBER'''
             }
         } 
-        stage('cleaning workspace') {
+         stage('cleaning workspace') {
             steps {
                  cleanWs()
             }
-        }
+          }
         }
     }
 }
