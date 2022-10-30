@@ -6,7 +6,10 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                 sh '''docker build -t yogi9949/project1:$BUILD_NUMBER .
+                 sh '''
+                    docker kill httpd
+                    docker build -t yogi9949/project1:$BUILD_NUMBER .
+                       
                        '''
                 withCredentials([usernameColonPassword(credentialsId: 'root', variable: 'docker')]) {
                     sh '''    
