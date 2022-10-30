@@ -3,8 +3,8 @@
 pipeline {
     agent {
     
-                 node('docker') {
-    
+                 node {
+                        label "docker"
           }
     
     }
