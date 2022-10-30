@@ -8,6 +8,7 @@ pipeline {
             steps {
                  sh '''
                     docker kill httpd
+                    docker rm httpd
                     docker build -t yogi9949/project1:$BUILD_NUMBER .
                        
                        '''
